@@ -1,4 +1,8 @@
 import { IoPrintSharp } from "react-icons/io5";
+import ImageSelection from "../components/ImageSelection";
+import CustomButton from "../components/CustomButton";
+import TitleInput from "../components/TitleInput";
+import MessageInput from "../components/MessageInput";
 
 const CardInputs = () => {
   return (
@@ -8,11 +12,18 @@ const CardInputs = () => {
           <h2 className="text-xl font-semibold text-neutral-500">
             Free Greeting Card Maker
           </h2>
-          <button className="text-md text-white bg-black rounded-md flex gap-x-2 items-center px-2 py-1">
-            <IoPrintSharp />
-            Print
-          </button>
+          <CustomButton
+            text="Download"
+            icon={<IoPrintSharp />}
+            extraStyles="text-white bg-black"
+          />
         </div>
+      </div>
+
+      <div className="p-4">
+        <ImageSelection />
+        <TitleInput />
+        <MessageInput />
       </div>
     </section>
   );
