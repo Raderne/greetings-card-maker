@@ -2,8 +2,10 @@ import { useState } from "react";
 import CustomButton from "./CustomButton";
 import { PiPresentationFill } from "react-icons/pi";
 import { RiSparklingFill } from "react-icons/ri";
+import { useGlobalContext } from "../context";
 
 const ImageSelection = () => {
+  const { setOpenPromptModal, setIsForImages } = useGlobalContext();
   const [imageSelected, setImageSelected] = useState(false);
 
   return (
@@ -56,6 +58,10 @@ const ImageSelection = () => {
           extraStyles="text-black border border-black ml-4"
           icon={<RiSparklingFill />}
           disabled={!imageSelected}
+          onClick={() => {
+            setOpenPromptModal(true);
+            setIsForImages(true);
+          }}
         />
       </div>
     </div>

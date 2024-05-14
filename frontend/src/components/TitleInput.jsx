@@ -1,4 +1,8 @@
+import { useGlobalContext } from "../context";
+
 const TitleInput = () => {
+  const { title, handleValues } = useGlobalContext();
+
   return (
     <div className="flex flex-col space-y-2 mt-8">
       <span className="text-lg w-full text-neutral-500">
@@ -11,6 +15,9 @@ const TitleInput = () => {
             "w-full p-2 outline-none rounded-md focus:ring-2 focus:ring-primary-500"
           }
           placeholder="Enter Title here"
+          value={title}
+          onChange={handleValues}
+          maxLength={60}
         />
       </div>
     </div>
