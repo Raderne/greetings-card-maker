@@ -12,7 +12,7 @@ export const generateText = async (apiKey, prompt) => {
   let modifiedPrompt =
     "Write a short message for my greeting card that says: " +
     prompt +
-    ". make it heartfelt and sincere with maximum 300 characters.";
+    ". make it heartfelt and sincere with maximum 300 characters and imojies.";
 
   const genAI = new GoogleGenerativeAI(apiKey);
   //   The Gemini 1.5 models are versatile and work with both text-only and multimodal prompts

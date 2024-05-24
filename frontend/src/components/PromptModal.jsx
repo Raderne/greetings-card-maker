@@ -42,16 +42,13 @@ const PromptModal = () => {
         body: JSON.stringify({ prompt }),
       };
 
-      if (isForImages) {
-        // TODO add image generation
-      } else {
-        const response = await fetch(
-          "http://localhost:8800/generate-text",
-          options
-        );
-        const text = await response.json();
-        setResult(text);
-      }
+      const response = await fetch(
+        "http://localhost:8800/generate-text",
+        options
+      );
+      const text = await response.json();
+      setResult(text);
+
       setOpen(true);
 
       setTimeout(() => {
@@ -73,7 +70,7 @@ const PromptModal = () => {
       <div
         className={
           "w-[60vw] pb-10 bg-white rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-6 transition-all duration-300 ease-in-out" +
-          (open && prompt.length > 0 ? " h-[80%]" : " h-[30vh]")
+          (open && prompt.length > 0 ? " h-[70%]" : " h-[30vh]")
         }
       >
         <span
