@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 const CustomButton = (props) => {
-  const { text, onClick, icon, extraStyles, disabled } = props;
+  const { text, onClick = () => {}, icon, extraStyles, disabled } = props;
 
   return (
     <button

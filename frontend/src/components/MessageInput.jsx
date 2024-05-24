@@ -3,7 +3,8 @@ import CustomButton from "./CustomButton";
 import { useGlobalContext } from "../context";
 
 const MessageInput = () => {
-  const { message, handleValues, setOpenPromptModal } = useGlobalContext();
+  const { message, handleValues, setOpenPromptModal, setOpenCard } =
+    useGlobalContext();
 
   return (
     <div className="flex flex-col space-y-2 mt-8">
@@ -25,6 +26,7 @@ const MessageInput = () => {
           value={message}
           name="message"
           onChange={handleValues}
+          onFocus={() => setOpenCard(true)}
         ></textarea>
         <span className="absolute right-2 bottom-2 text-neutral-500">
           {message.length}/300
