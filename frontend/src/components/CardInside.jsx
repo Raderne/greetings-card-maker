@@ -7,7 +7,6 @@ const CardInside = () => {
   let messageLength = message.length;
 
   useEffect(() => {
-    console.log(messageLength);
     messageRef.current.style.fontSize = `
         ${messageLength > 0 && messageLength < 50 ? "2.5rem" : "1rem"}
     `;
@@ -15,7 +14,7 @@ const CardInside = () => {
 
   return (
     <div id="card-inside">
-      <div className="wrap flex justify-center items-center break-all">
+      <div className="wrap flex justify-center items-center break-words">
         <p ref={messageRef} className="text-center">
           {message.length > 0
             ? message.split("\n").map((line, index) => {

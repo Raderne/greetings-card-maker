@@ -3,10 +3,25 @@ import CustomButton from "./CustomButton";
 import { PiPresentationFill } from "react-icons/pi";
 import { RiSparklingFill } from "react-icons/ri";
 import { useGlobalContext } from "../context";
+import Presets from "./Presets";
 
 const ImageSelection = () => {
-  const { setOpenPromptModal, setIsForImages } = useGlobalContext();
+  const { setOpenPromptModal, setIsForImages, setSelectedBackground } =
+    useGlobalContext();
   const [imageSelected, setImageSelected] = useState(false);
+  const [showPresets, setShowPresets] = useState(false);
+
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setSelectedBackground(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
 
   return (
     <div className="flex flex-col space-y-2">
@@ -36,7 +51,11 @@ const ImageSelection = () => {
               : "cursor-not-allowed")
           }
         >
-          Custom Upload
+          {
+            imageSelected
+              ? "Click to upload an image"
+              : "Please select image to upload"
+          }
         </label>
         <input
           className="hidden"
@@ -44,6 +63,7 @@ const ImageSelection = () => {
           id="file-upload"
           disabled={!imageSelected}
           hidden
+          onChange={handleImageUpload}
         />
 
         <CustomButton
@@ -51,6 +71,7 @@ const ImageSelection = () => {
           extraStyles="text-white bg-black ml-4"
           icon={<PiPresentationFill />}
           disabled={!imageSelected}
+          onClick={() => setShowPresets(!showPresets)}
         />
 
         <CustomButton
@@ -64,6 +85,8 @@ const ImageSelection = () => {
           }}
         />
       </div>
+
+      {showPresets && <Presets setShowPresets={setShowPresets} />}
     </div>
   );
 };

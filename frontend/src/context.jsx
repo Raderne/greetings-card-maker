@@ -16,6 +16,7 @@ const AppProvider = ({ children }) => {
     message: "",
   });
   const [openCard, setOpenCard] = useState(false);
+  const [selectedBackground, setSelectedBackground] = useState(null);
 
   const handleValues = (e) => {
     const { name, value } = e.target;
@@ -30,7 +31,7 @@ const AppProvider = ({ children }) => {
     if (name === "color") {
       setColor(value);
       setOpenCard(false);
-    } else {
+    } else if (name === "title") {
       setTitle(value);
       setOpenCard(false);
     }
@@ -48,6 +49,7 @@ const AppProvider = ({ children }) => {
         error,
         openCard,
         color,
+        selectedBackground,
         setImage,
         setOpenPromptModal,
         setIsForImages,
@@ -56,6 +58,7 @@ const AppProvider = ({ children }) => {
         handleValues,
         setOpenCard,
         setMessage,
+        setSelectedBackground,
       }}
     >
       {children}

@@ -12,6 +12,7 @@ const TitleInput = () => {
       <div className="border-2 border-neutral-200 relative rounded-md w-full text-center text-neutral-500">
         <input
           type="text"
+          name="title"
           className={
             "w-full p-2 outline-none rounded-md focus:ring-2 focus:ring-primary-500"
           }
