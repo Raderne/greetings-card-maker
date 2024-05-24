@@ -1,20 +1,25 @@
 import { useGlobalContext } from "../context";
 
 const CardFront = () => {
-  const { title, openCard, setOpenCard, color, selectedBackground } = useGlobalContext();
+  const { title, openCard, setOpenCard, color, selectedBackground } =
+    useGlobalContext();
 
   return (
-    <div id="card-front"
+    <div
+      id="card-front"
       className="relative w-full h-full rounded-md shadow-md bg-cover bg-center"
       style={{
         backgroundImage: `url(${selectedBackground})`,
       }}
     >
-      <div className="wrap break-words flex-center">
+      <div className="wrap break-words">
         <h1
-          className="capitalize"
+          className="capitalize title font-semibold"
           style={{
             color: color,
+            fontSize: "70px",
+            fontWeight: "600",
+            textAlign: "center",
           }}
         >
           {title.length > 0
