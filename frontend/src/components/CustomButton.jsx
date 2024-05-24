@@ -24,7 +24,7 @@ const CustomButton = (props) => {
 
 CustomButton.propTypes = {
   text: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   icon: PropTypes.element,
   extraStyles: PropTypes.string,
   disabled: PropTypes.bool,

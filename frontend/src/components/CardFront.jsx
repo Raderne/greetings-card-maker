@@ -5,7 +5,7 @@ const CardFront = () => {
 
   return (
     <div id="card-front">
-      <div className="wrap break-words">
+      <div className="wrap break-words flex-center">
         <h1
           className="capitalize"
           style={{

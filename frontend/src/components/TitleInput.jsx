@@ -21,10 +21,10 @@ const TitleInput = () => {
           maxLength={60}
           onFocus={() => setOpenCard(false)}
         />
-        <div className="color-selector absolute right-2 top-1">
+        <div className="absolute right-2 top-1">
           <input
             type="color"
-            className="w-8 h-8 rounded-md"
+            className="w-8 h-8 border-2 border-neutral-600 outline-none cursor-pointer"
             name="color"
             onChange={handleValues}
             value={color}

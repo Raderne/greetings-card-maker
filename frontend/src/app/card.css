@@ -1,10 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Nobile:400italic,700italic);
 @import url(https://fonts.googleapis.com/css?family=Dancing+Script);
 
-#card-front {
-  color: #ffdfdf;
-}
-
 #card,
 #card-front,
 #card-inside {
@@ -50,9 +46,7 @@
   font-family: "Nobile", sans-serif;
   font-style: italic;
   font-size: 70px;
-  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15),
-    1px 1px 0 rgba(255, 200, 200, 255), 2px 2px 0 rgba(255, 150, 150, 255),
-    3px 3px 0 rgba(255, 125, 125, 255);
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.15);
   color: #fff;
 }
 #card-inside {
@@ -79,10 +73,10 @@ p.signed {
 }
 
 #card-front {
-  background-color: #ff5555;
-  background-image: linear-gradient(to top, #ff5555 0%, #ff7777 100%);
-  background-image: -moz-linear-gradient(to top, #ff5555 0%, #ff7777 100%);
-  background-image: -webkit-linear-gradient(to top, #ff5555 0%, #ff7777 100%);
+  background-color: #fff4f4;
+  background-image: linear-gradient(to top, #ffffff 0%, #fff3fa 100%);
+  background-image: -moz-linear-gradient(to top, #ffffff 0%, #fff3fa 100%);
+  background-image: -webkit-linear-gradient(to top, #ffffff 0%, #fff3fa 100%);
   transform-origin: left;
   -moz-transform-origin: left;
   -webkit-transform-origin: left;

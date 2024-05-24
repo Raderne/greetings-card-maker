@@ -6,12 +6,15 @@ const AppContext = createContext();
 const AppProvider = ({ children }) => {
   const [message, setMessage] = useState("");
   const [title, setTitle] = useState("");
-  const [color, setColor] = useState("#ffffff");
+  const [color, setColor] = useState("#000000");
   const [openPromptModal, setOpenPromptModal] = useState(false);
   const [isForImages, setIsForImages] = useState(false);
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState({
+    isError: false,
+    message: "",
+  });
   const [openCard, setOpenCard] = useState(false);
 
   const handleValues = (e) => {
@@ -52,6 +55,7 @@ const AppProvider = ({ children }) => {
         setError,
         handleValues,
         setOpenCard,
+        setMessage,
       }}
     >
       {children}
