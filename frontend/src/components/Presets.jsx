@@ -19,7 +19,7 @@ const Presets = ({ setShowPresets }) => {
       </div>
       <div className="grid grid-cols-4 gap-4 mt-2">
         {Object.keys(backgrounds).map((key) => (
-          <div key={key} className="break-words">
+          <div key={key} className="break-words flex-center flex-col">
             <img
               src={backgrounds[key]}
               alt={key}

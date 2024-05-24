@@ -24,6 +24,14 @@ const PromptModal = () => {
   };
 
   const handleGenerate = async () => {
+    if (prompt.length === 0) {
+      setError({
+        isError: true,
+        message: "Please enter a prompt",
+      });
+      return;
+    }
+
     setLoading(true);
     try {
       const options = {
@@ -65,7 +73,7 @@ const PromptModal = () => {
       <div
         className={
           "w-[60vw] pb-10 bg-white rounded-md absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-6 transition-all duration-300 ease-in-out" +
-          (open ? " h-[80%]" : " h-[30vh]")
+          (open && prompt.length > 0 ? " h-[80%]" : " h-[30vh]")
         }
       >
         <span
@@ -96,7 +104,7 @@ const PromptModal = () => {
         </div>
 
         {/* the result */}
-        {open && (
+        {open && prompt.length > 0 && (
           <div className="mt-8">
             <div className="text-center text-2xl font-bold text-neutral-700 p-4">
               Result

@@ -1,13 +1,11 @@
 import { useState } from "react";
 import CustomButton from "./CustomButton";
 import { PiPresentationFill } from "react-icons/pi";
-import { RiSparklingFill } from "react-icons/ri";
 import { useGlobalContext } from "../context";
 import Presets from "./Presets";
 
 const ImageSelection = () => {
-  const { setOpenPromptModal, setIsForImages, setSelectedBackground } =
-    useGlobalContext();
+  const { setSelectedBackground } = useGlobalContext();
   const [imageSelected, setImageSelected] = useState(false);
   const [showPresets, setShowPresets] = useState(false);
 
@@ -51,11 +49,9 @@ const ImageSelection = () => {
               : "cursor-not-allowed")
           }
         >
-          {
-            imageSelected
-              ? "Click to upload an image"
-              : "Please select image to upload"
-          }
+          {imageSelected
+            ? "Click to upload an image"
+            : "Please select image to upload"}
         </label>
         <input
           className="hidden"
@@ -74,7 +70,7 @@ const ImageSelection = () => {
           onClick={() => setShowPresets(!showPresets)}
         />
 
-        <CustomButton
+        {/* <CustomButton
           text="Generate"
           extraStyles="text-black border border-black ml-4"
           icon={<RiSparklingFill />}
@@ -83,7 +79,7 @@ const ImageSelection = () => {
             setOpenPromptModal(true);
             setIsForImages(true);
           }}
-        />
+        /> */}
       </div>
 
       {showPresets && <Presets setShowPresets={setShowPresets} />}
